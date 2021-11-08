@@ -1,0 +1,154 @@
+body{
+  background-color: rgba(180, 180, 180, 0.4)
+}
+
+h1{
+  font-family: 'Arial Narrow';
+  font-weight: normal;
+  margin-bottom: 1,5em;
+  text-align: center;
+  text-decoration: underline;
+  font-size: calc(40px + (100 - 40) * ((100vw - 320px) / (1600 - 320))); /*Skalierende Schriftgröße berechnen*/
+}
+
+a{
+  align-content: left;
+  font-family: 'Arial Narrow', Arial, serif;
+  font-weight: normal;
+  font-size: calc(16px + (28 - 16) * ((100vw - 320px) / (1600 - 320))); /*Skalierende Schriftgröße berechnen*/
+  line-height: 150%;
+}
+
+p{
+  font-family: 'Garamond', garamond;
+  font-weight: normal;
+  text-align: center;
+  font-size: calc(8px + (28 - 8) * ((100vw - 320px) / (1600 - 320))); /*Skalierende Schriftgröße berechnen*/
+}
+
+span{
+  position: absolute;
+  left: 19%;
+  right: 25%;
+}
+
+body {
+  font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width])
+             / ([maximum viewport width] - [minimum viewport width])));
+}
+
+nav ul{
+  list-style-type: none; /* entfernt Abstände zwischen <ul>-Tags */
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li{
+  position: relative; 
+}
+
+nav ul li:hover{
+  background-color: rgb(39, 40, 41, .8)
+}
+
+nav ul a { /*Links*/
+  color: #ffff;
+  text-decoration: none;
+  padding-left: 25px;
+  display: block;
+  padding: 10px 5px;
+  padding-left: 30px;
+}
+
+nav ul a:after{ /* Durch die Schriftart "Font Awesome" kann mit content ein Pfeil gesetzt werden*/
+  font-family: "FontAwesome"; 
+  content: "\f054";
+  display: block;
+  position: absolute;
+  left: 15px;
+  top: 13px;
+  font-size: 12px;
+}
+
+nav{
+  z-index: 999;
+  position: fixed; /*"nav" läuft beim scrollen nicht mit*/
+  width: calc(140px + (240 - 140) * ((100vw - 80px) / (2000 - 80)));
+  left: calc(-140px + (-240 - -140) * ((100vw - 80px) / (2000 - 80)));
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .8);
+  padding: 15px 0;
+  transition: left 0.5s ease-in 0.3s;
+}
+
+nav:after{
+  content: "\f0c9";
+  font-family: "FontAwesome";
+  font-weight: 380;
+  font-style: normal;
+  text-decoration: inherit;
+  color: #ffffff;
+  position: absolute;
+  left: 100%;
+  right: auto;
+  top: 0;
+  padding: 15px;
+  background-color: rgba( 0, 0, 0, .8 );
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+}
+
+nav:hover {
+  left: 0;
+  transition: left 0.5s ease-in 0s;
+}
+
+nav:hover:after {
+  content: "\f0c9";
+  font-family: "FontAwesome";
+}
+
+nav > ul {
+  margin-top: 16%;
+}
+
+/*Multilevel Navigation*/
+nav ul li > ul {
+  position: absolute;
+  background-color: rgba( 0, 0, 0, .8 );
+  width: 80%;
+  top: 1999px;
+  left: 100%;
+  transition: top .5s;
+}
+
+nav ul li > ul li {
+  min-width: 60px;
+  z-index: 999;
+}
+
+nav ul li:hover > ul,
+nav ul li > ul:hover {
+    right: 0%;
+    top: 0%;
+}
+
+img {
+  float: right;
+  clear: right;
+
+  margin-top: 1em;
+  max-width: 100%;
+  height: auto;
+  min-width: 20%;
+  min-height: 20%;
+  box-shadow: 8px 8px 10px #aaa; /*Schatten, um die Bilder stärker hervorzuheben*/
+}
+
+.caption{
+  float: right;
+  clear: right;
+  text-align: center;
+  margin-left: 80%;
+}
